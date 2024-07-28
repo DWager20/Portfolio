@@ -30,7 +30,7 @@ if [ -d "$folderName" ]; then
     
     while [ -z "$newFolderName" ];  do
         
-        echo -ne "\033[031mError! \033[032m"
+        echo -ne "\033[031mError! \033[032m"        # Red error
         read -rp "Please enter a non zero destination folder: " newFolderName
     
     done
@@ -39,7 +39,7 @@ if [ -d "$folderName" ]; then
 
     while [ -d "$newFolderName" ]; do
         
-        echo -ne "\033[031mError! \033[032m"
+        echo -ne "\033[031mError! \033[032m"        # Red error
         read -rp "Please enter a non existing destination folder: " newFolderName
     
     done
@@ -58,7 +58,7 @@ if [ -d "$folderName" ]; then
     
     else
 
-        echo -ne "\033[031mError! \033[032m"
+        echo -ne "\033[031mError! \033[032m"        # Red Error
         echo "Copy failed. Try again."
     
     fi
@@ -66,7 +66,7 @@ if [ -d "$folderName" ]; then
 else
 
     # otherwise, print an error
-    echo -ne "\033[031mError! \033[032m"
+    echo -ne "\033[031mError! \033[032m"            # Red Error
     echo "I couldn't find that folder!"
 
 fi
