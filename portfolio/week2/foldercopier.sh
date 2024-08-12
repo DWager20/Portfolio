@@ -9,9 +9,10 @@
 #
 # Author: David Wager
 # Date created: 17 July 2024
-# Last Edited: 18 July 2024
+# Last Edited: 28 July 2024 added colours
 # -----------------------------------------------------
 
+echo -ne "\033[032m"    # set text colour to green
 
 # First get folder name
 
@@ -28,7 +29,8 @@ if [ -d "$folderName" ]; then
     # Validate newFolderName checking for empty string
     
     while [ -z "$newFolderName" ];  do
-    
+        
+        echo -ne "\033[031mError! \033[032m"        # Red error
         read -rp "Please enter a non zero destination folder: " newFolderName
     
     done
@@ -36,7 +38,8 @@ if [ -d "$folderName" ]; then
     # Validate newFolderName checking to make sure not an existing folder
 
     while [ -d "$newFolderName" ]; do
-    
+        
+        echo -ne "\033[031mError! \033[032m"        # Red error
         read -rp "Please enter a non existing destination folder: " newFolderName
     
     done
@@ -54,7 +57,8 @@ if [ -d "$folderName" ]; then
         echo "Folder " "$folderName" " successfully copied to " "$newFolderName"
     
     else
-    
+
+        echo -ne "\033[031mError! \033[032m"        # Red Error
         echo "Copy failed. Try again."
     
     fi
@@ -62,9 +66,11 @@ if [ -d "$folderName" ]; then
 else
 
     # otherwise, print an error
-
+    echo -ne "\033[031mError! \033[032m"            # Red Error
     echo "I couldn't find that folder!"
 
 fi
+
+echo -ne "\033[0m"    # set text colour back to default
 
 exit 0
