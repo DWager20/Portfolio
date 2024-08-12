@@ -26,7 +26,8 @@
 # 
 # Author: David Wager
 # Date created: 6 August 2024
-# Last Edited: 9 August 2024 
+# Last Edited: 12 August 2024 Changed hard coded /bin/bash to
+#               regex expression
 # ----------------------------------------------------
       
  
@@ -36,7 +37,7 @@ echo -e "\033[032m\n/bin/bash Shell Records in '/etc/passwd':"
  
 # set File Separator to ":" and search for shell field "bin/bash"
 
-awk -F":" '$7 == "/bin/bash" ' /etc/passwd |
+awk -F":" '$7 ~ /bas/ ' /etc/passwd |
 
 # Formats piped output of previous into a coloured table
 
