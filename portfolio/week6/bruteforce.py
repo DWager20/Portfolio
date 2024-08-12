@@ -30,7 +30,7 @@
 #
 # Author: David Wager
 # Date created: 10 August 2024
-# Last Edited: 10 August 2024 
+# Last Edited: 12 August 2024 Minor edit
 # ----------------------------------------------------
 #
 # Libraries required
@@ -102,7 +102,8 @@ def guess_password(real):
     # Loop failed to find password
     #
     print("\033[1;31m\nError: Password is longer than ",maxlen," charaters or contains non digit/letter characters!\n\033[0;37m")
+    
 #
 # Run the guess password function
 #
-print(guess_password(passwordHash))
+guess_password(passwordHash)
