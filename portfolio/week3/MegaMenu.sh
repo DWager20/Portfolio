@@ -16,12 +16,14 @@
 # 
 # Author: David Wager
 # Date created: 28 July 2024
-# Last Edited: 28 July 2024
+# Last Edited: 12 August 2024 handled having subscripts in different
+#              directories.
 # --------------------------------------------------------------
 
 # Run passwordCheck.sh to check access
     
-./passwordCheck.sh
+cd "$HOME/student/scripts/portfolio/week2/" && ./passwordCheck.sh
+
      
 result=$?
 
@@ -33,10 +35,7 @@ if [ "$result" = 0 ]; then # Access granted
 
     echo ""
     echo -ne "\033[034m"   # Change text colour to blue
-    echo "Welcome"
-    
-
-    
+    echo "Welcome"    
 
     # Set up input request for menu
 
@@ -63,16 +62,16 @@ if [ "$result" = 0 ]; then # Access granted
 
         case "$choice" in
             "1")                 
-                ./folderCreate.sh
+                cd "$HOME/student/scripts/portfolio/week2" && ./folderCreate.sh
                 ;;
             "2")
-                ./foldercopier.sh
+                cd "$HOME/student/scripts/portfolio/week2" && ./foldercopier.sh
                 ;;
             "3")
-                ./setPassword.sh
+                cd "$HOME/student/scripts/portfolio/week2" && ./setPassword.sh
                 ;;
             "4")
-                ./calculator.sh
+                cd "$HOME/student/scripts/portfolio/week3" && ./calculator.sh
                 ;;
             "5")
                 echo -ne "\033[032m"    # set text colour to green
@@ -104,7 +103,7 @@ if [ "$result" = 0 ]; then # Access granted
 
                 echo -e "\033[0m"     # change text colour back to default
 
-                ./megafoldermaker.sh "$week1" "$week2"
+                cd "$HOME/student/scripts/portfolio/week3" && ./megafoldermaker.sh "$week1" "$week2"
             ;;
             6)
                 echo -ne "\033[032m"    # set text colour to green
@@ -122,10 +121,10 @@ if [ "$result" = 0 ]; then # Access granted
 
                 echo -e "\033[0m"     # change text colour back to default
 
-                ./filenames.sh "$fileName"
+                cd "$HOME/student/scripts/portfolio/week3" && ./filenames.sh "$fileName"
                 ;;
             7)
-                ./InternetDownloader.sh
+                cd "$HOME/student/scripts/portfolio/week3" && ./InternetDownloader.sh
                 ;; 
             8)      
                 exit 0

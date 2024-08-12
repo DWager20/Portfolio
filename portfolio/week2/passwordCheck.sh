@@ -15,8 +15,7 @@
 # Last Edited: 12 August 2024
 # -----------------------------------------------------
 
-# Check if secret.txt exists in any subdirectory
-
+# Check if secret.txt exists in any subdirectory of HOME directory
 
 pwd_file="secret.txt"
 
