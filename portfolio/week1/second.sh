@@ -7,19 +7,34 @@
 #
 # Author: David Wager
 # Date created: 11 July 2024
-# Last edited: 28 July 2024
+# Last edited: 12 August 2024
 # ---------------------------------------------------------------
 
+# Change colour to green and print greeting
 
+echo -e "\n\033[032mHi there!"
 
-echo "Hi there!"
+# Check if there is at least one argument
 
-# Input is quite robust on its own. Zero arguments mean just printing
-# "It's good to see you !" which is acceptable. If more than one argument
-# is provided, the additional arguments are ignored which is also acceptable 
-# for this simple program.
+if [ "$#" -lt 1 ]; then
+    echo -e "\033[031mError: \033[032mAt least 1 arguments is required."
+    echo "Usage: $0 arg1 [arg2 ...]"
+    echo -e "Please let me know who you are!\033[0m\n" 
+    exit 1
+fi
 
-echo "It's good to see you $1!"
+# If code gets to this point at least one argument was passed to the file
+# Greet the person parsed in the file arguments with the name in yellow and bold
+
+echo -ne "It's good to see you \033[1;033m"
+
+for i in $*; do 
+    echo -ne "$i "
+done
+
+#Print final exclamation mark in green and return to default colour
+
+echo -e "\033[032m!\033[0m\n"
 
 exit 0
 					
