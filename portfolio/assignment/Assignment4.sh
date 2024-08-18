@@ -437,9 +437,11 @@ gettwonumbers()
 
 echo -e "\033[032m\nWelcome to Assignment 4 Data Search!\n" 
 
-# Run passwordCheck.sh to check access
-    
-cd "$HOME/student/scripts/portfolio/assignment" && ./passwordCheck.sh
+# Run passwordCheck.sh to check access. Removed global path
+# as this is easier to just use the local directory
+# for moving assignmet folder around for submission
+
+./passwordCheck.sh
      
 result=$?
 
